@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARS | Maintenance</title>
+
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">DARS</div>
+
+        <p class="sidebar-subtitle">ASSET MANAGEMENT</p>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="assets.html">Assets</a>
+            <a href="add-assets.html">Add New Asset</a>
+            <a href="maintenance.html" class="active">Maintenance</a>
+            <a href="login.html">Logout</a>
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1>Maintenance Management</h1>
+                <p>Monitor and manage asset maintenance activities.</p>
+            </div>
+
+            <div class="admin-label">ADMINISTRATOR</div>
+
+        </header>
+
+        <!-- Maintenance Statistics -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <p>Total Maintenance</p>
+                <h2 id="totalMaintenance">0</h2>
+                <span>All maintenance records</span>
+            </div>
+
+            <div class="stat-card ready">
+                <p>Pending</p>
+                <h2 id="pendingMaintenance">0</h2>
+                <span>Waiting for service</span>
+            </div>
+
+            <div class="stat-card maintenance">
+                <p>In Progress</p>
+                <h2 id="progressMaintenance">0</h2>
+                <span>Currently being serviced</span>
+            </div>
+
+            <div class="stat-card unavailable">
+                <p>Completed</p>
+                <h2 id="completedMaintenance">0</h2>
+                <span>Service completed</span>
+            </div>
+
+        </section>
+
+        <!-- Add Maintenance Form -->
+        <section class="recent-section">
+
+            <h2>Register Maintenance</h2>
+
+            <form id="maintenanceForm"
+                  action="add-maintenance"
+                  method="POST">
+
+                <label>Asset Code</label>
+
+                <select name="asset_code"
+                        id="assetCode"
+                        required
+                        style="display:block;width:100%;padding:12px;margin:8px 0 20px;">
+
+                    <option value="">Select Asset</option>
+
+                </select>
+
+                <label>Maintenance Date</label>
+
+                <input type="date"
+                       name="maintenance_date"
+                       required
+                       style="display:block;width:100%;padding:12px;margin:8px 0 20px;">
+
+                <label>Description</label>
+
+                <textarea name="description"
+                          rows="4"
+                          placeholder="Enter maintenance details"
+                          required
+                          style="display:block;width:100%;padding:12px;margin:8px 0 20px;"></textarea>
+
+                <label>Maintenance Status</label>
+
+                <select name="status"
+                        required
+                        style="display:block;width:100%;padding:12px;margin:8px 0 20px;">
+
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+
+                </select>
+
+                <button type="submit" class="btn">
+                    Save Maintenance
+                </button>
+
+                <button type="reset" class="btn">
+                    Reset Form
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Maintenance Records -->
+        <section class="recent-section">
+
+            <h2>Maintenance History</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Asset Code</th>
+                            <th>Maintenance Date</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="maintenanceTableBody">
+
+                        <tr>
+                            <td colspan="5">
+                                Loading maintenance records...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            DARS | Defense Asset Readiness System
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/maintenance.js"></script>
+
+</body>
+</html>

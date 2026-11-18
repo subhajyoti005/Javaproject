@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARS | Assets</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">DARS</div>
+        <p class="sidebar-subtitle">ASSET MANAGEMENT</p>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="assets.html" class="active">Assets</a>
+            <a href="add-assets.html">Add New Asset</a>
+            <a href="maintenance.html">Maintenance</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Asset Management</h1>
+                <p>View and manage registered defense assets.</p>
+            </div>
+            <div class="admin-label">ADMINISTRATOR</div>
+        </header>
+
+        <section class="recent-section">
+
+            <h2>All Asset Records</h2>
+
+            <div style="margin:20px 0;">
+                <input
+                    type="text"
+                    id="searchAsset"
+                    placeholder="Search assets..."
+                    style="padding:12px;width:100%;max-width:350px;"
+                >
+
+                <a href="add-assets.html" class="btn">
+                    + Add New Asset
+                </a>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asset Code</th>
+                            <th>Asset Name</th>
+                            <th>Category</th>
+                            <th>Condition</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="assetTableBody">
+                        <tr>
+                            <td colspan="5">Loading assets...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            DARS | Defense Asset Readiness System
+        </footer>
+
+    </main>
+
+    <script src="js/assets.js"></script>
+
+</body>
+</html>

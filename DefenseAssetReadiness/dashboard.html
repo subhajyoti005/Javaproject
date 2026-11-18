@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARS | Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">DARS</div>
+
+        <p class="sidebar-subtitle">ASSET MANAGEMENT</p>
+
+        <nav>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="assets.html">Assets</a>
+            <a href="add-assets.html">Add New Asset</a>
+            <a href="maintenance.html">Maintenance</a>
+            <a href="logout">Logout</a>
+        </nav>
+
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1>Dashboard Overview</h1>
+                <p>Defense Asset Readiness System</p>
+            </div>
+
+            <div class="admin-label">
+                ADMINISTRATOR
+            </div>
+
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+
+            <h2>Welcome, Administrator!</h2>
+
+            <p>
+                Monitor and manage your organization's asset readiness.
+            </p>
+
+        </section>
+
+        <!-- Asset Statistics -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <p>Total Assets</p>
+                <h2 id="totalAssets">0</h2>
+                <span>Registered assets</span>
+            </div>
+
+            <div class="stat-card ready">
+                <p>Ready Assets</p>
+                <h2 id="readyAssets">0</h2>
+                <span>Available for use</span>
+            </div>
+
+            <div class="stat-card maintenance">
+                <p>Under Maintenance</p>
+                <h2 id="maintenanceAssets">0</h2>
+                <span>Being serviced</span>
+            </div>
+
+            <div class="stat-card unavailable">
+                <p>Unavailable</p>
+                <h2 id="unavailableAssets">0</h2>
+                <span>Not currently ready</span>
+            </div>
+
+        </section>
+
+        <!-- Recent Asset Records -->
+        <section class="recent-section">
+
+            <h2>Recent Asset Records</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Asset Code</th>
+                            <th>Asset Name</th>
+                            <th>Category</th>
+                            <th>Condition</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="assetTableBody">
+
+                        <tr>
+                            <td colspan="5">
+                                Loading asset records...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            DARS | Defense Asset Readiness System
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
